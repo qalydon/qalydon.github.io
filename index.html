@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+<div class="home">
+  <p>
+    Welcome to the Qalydon web site. Here you will find
+    articles about the various GitHub housed projects in the Qalydon realm.
+	This includes
+  </p>
+  <ul>
+    <li>Notes about the GitHub 
+		<a href="https://github.com/qalydon?tab=repositories"> project repos </a>
+		under this account
+	</li>
+    <li>Various posts</li>
+  </ul>
+
+  <h1 class="page-heading">Posts</h1>
+
+  <ul class="post-list">
+    {% if site.posts.size > 0 %}
+      {% for post in site.posts %}
+        <li>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+          <h2>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          </h2>
+        </li>
+      {% endfor %}
+     {% else %}
+        <p>There are no posts</p>
+     {% endif %}
+  </ul>
+
+</div>
